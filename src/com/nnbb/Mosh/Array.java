@@ -22,9 +22,19 @@ public class Array
     public void insert(int item)
     {
         //if array is full,resize it
+        //add the new item at the end
         if(index>=length-1){
-            System.out.println("overload!!!");
-            return;
+            //create new array-->> twice the size
+            //copy all the existing items
+            //Set "items" to the new array
+            int[] newArr=new int[2*(index+1)];
+            for (int i=0;i<index+1;i++)
+            {
+                newArr[i]=items[i];
+            }
+                items=newArr;
+//            System.out.println("overload!!!");
+
         }
 
         this.items[++index]=item;
@@ -40,6 +50,48 @@ public class Array
         {
             System.out.println(items[i]);
         }
+
+    }
+    public void removeAt(int ind)
+    {
+        //validate the index
+        //shift the items to left to fill the hole
+
+        if(ind<0 || ind>=index+1)
+        {
+            throw new IllegalArgumentException();
+        }
+        for(int i=ind;i<index+1;i++)
+        {
+            items[i]=items[i+1];
+        }
+        index--;
+    }
+    public int indexOf(int item)
+    {
+        //loop over, if we find item, return index
+        //otherwise return -1
+        for(int i=0;i<=index;i++)
+        {
+            if(items[i]==item)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int max()
+    {
+        int maximum=-999999;
+        for(int i=0;i<=index;i++)
+        {
+            if(items[i]>maximum)
+            {
+                maximum=items[i];
+            }
+        }
+
+        return maximum;
 
     }
 
