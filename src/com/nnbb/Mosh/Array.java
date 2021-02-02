@@ -94,6 +94,47 @@ public class Array
         return maximum;
 
     }
+    public int[] intersect(int[] arr)
+    {
+        int[] resultArr=new int[arr.length];
+        int count=0;
+        for(int i=0;i<=index;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                if(items[i]==arr[j])
+                {
+                    resultArr[count]=arr[j];
+                    count++;
+                }
+            }
+        }
+        return resultArr;
+    }
+
+    public int[] reverse()
+    {
+        int[] resArr=new int[index+1];
+        for(int i=0;i<=index;i++)
+        {
+            resArr[index-i]=items[i];
+        }
+        return resArr;
+    }
+    public void insertAt(int item,int ind)
+    {
+        int[] resArr=new int[index+2];
+        for(int i=0;i<ind;i++)
+        {
+            resArr[i]=items[i];
+        }
+        resArr[ind]=item;
+        for(int j=ind;j<items.length;j++)
+        {
+            resArr[j+1]=items[j];
+        }
+        items=resArr;
+    }
 
 
 }
