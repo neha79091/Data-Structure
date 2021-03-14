@@ -6,13 +6,26 @@ public class Main
 {
     public static void main(String[] args)
     {
+        MakingStack st=new MakingStack();
+        st.push(100);
+        st.push(200);
+        st.push(300);
+        st.push(400);
+        st.pop();
+        st.pop();
+        st.pop();
+        st.pop();
+//        System.out.println(st.peek());
+        System.out.println(st.isEmpty());
 
-        String str="abcd";
-        ReverseString rs=new ReverseString();
-        System.out.println("abcd");
-        rs.reversedString(str);
-        System.out.println(rs.reversedString(str));
-
+//        String str="(a[b]()cd)";
+//        ReverseString rs=new ReverseString();
+//        System.out.println("abcd");
+//        rs.reversedString(str);
+//        System.out.println(rs.reversedString(str));
+//        BalancedExpression be=new BalancedExpression();
+//        System.out.println(be.isBalanced(str));
+//        be.isBalanced(str);
 
 //        list.addFirst(200);
 //        System.out.println(list.indexOf(200));
