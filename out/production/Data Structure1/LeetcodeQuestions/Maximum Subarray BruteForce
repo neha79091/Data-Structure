@@ -1,0 +1,39 @@
+//I am using two pointers for brute force.
+//1. pointer1 is on 0 index and ptr2 is on 1 index.
+//2.we move second pointer and calculate sum using for loop.
+//3.when second pointer reaches end of the array, first pointer is incremented and same is repeated.
+//4.space complexity=O(1),time complexity=O(n^3)
+package LeetcodeQuestions;
+class  maxSubArrayBruteForce
+{
+    public int maxSumArray(int[] array)
+    {
+        int ptr1=0;
+        int ptr2=1;
+        int max=0;
+
+        for(int i=ptr1;i<array.length;i++)
+        {
+            for(int j=ptr2;j<array.length;i++)
+            {
+                    if(max<sumOfArray(ptr1,ptr2,array))
+                    {
+                            max=sumOfArray(ptr1,ptr2,array);
+                    }
+            }
+        }
+
+
+        return max;
+    }
+
+    public int sumOfArray(int start,int end,int[] array)
+    {
+        int sum=0;
+        for(int i=start;i<=end;i++)
+        {
+            sum+=array[i];
+        }
+        return sum;
+    }
+}

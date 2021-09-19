@@ -20,6 +20,7 @@ public class TwoStacks
     {
         twoStArr[(currSize1*2)+1]=i;
     }
+    currSize1++;
     return;
   }
     public void push2(int i)
@@ -32,6 +33,7 @@ public class TwoStacks
         {
             twoStArr[currSize2*2]=i;
         }
+        currSize2++;
         return;
     }
 
@@ -68,6 +70,7 @@ public class TwoStacks
       if(isEmpty1()) throw new IllegalStateException();
       else
         {
+            currSize1--;
             return twoStArr[(currSize1*2)+1];
         }
     }
@@ -76,6 +79,7 @@ public class TwoStacks
         if(isEmpty2()) throw new IllegalStateException();
         else
         {
+            currSize2--;
             return twoStArr[(currSize2*2)];
         }
     }
